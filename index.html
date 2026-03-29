@@ -546,6 +546,81 @@
       box-shadow: 0 12px 36px rgba(60,122,63,.45);
     }
 
+    /* ─── FOUNDER ───────────────────────────────────────────── */
+    .founder { background: var(--white); }
+    .founder-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .founder-image-wrap {
+      position: relative;
+    }
+    .founder-img {
+      width: 100%; border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(29,40,82,.2);
+      object-fit: cover; max-height: 480px;
+      display: block;
+    }
+    /* fallback se imagem não existir */
+    .founder-img[src="fundador.jpg"]:not([complete]),
+    .founder-img[src="fundador.jpg"][naturalWidth="0"] {
+      min-height: 380px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    }
+    .founder-scania-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: #fff; border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+    }
+    .founder-truck-tag {
+      position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
+      background: var(--navy); color: #fff;
+      padding: 10px 24px; border-radius: 30px;
+      font-size: 13px; font-weight: 600; letter-spacing: .5px;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(29,40,82,.35);
+      border: 2px solid var(--green);
+    }
+    .founder-content { padding-top: 16px; }
+    .founder-lead {
+      font-size: 16px; line-height: 1.75; color: var(--gray);
+      margin-bottom: 32px;
+    }
+    .founder-quote {
+      background: var(--light);
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px; margin-bottom: 36px;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: Georgia, serif; font-size: 72px; line-height: .7;
+      color: var(--green); opacity: .25;
+      position: absolute; top: 16px; left: 18px;
+    }
+    .founder-quote p {
+      font-size: 16px; line-height: 1.7; color: var(--navy);
+      font-style: italic; position: relative; z-index: 1;
+      margin-bottom: 14px;
+    }
+    .founder-quote footer {
+      font-size: 13px; font-weight: 700; color: var(--green);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .founder-badges {
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .f-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy); color: #fff;
+      padding: 8px 18px; border-radius: 30px;
+      font-size: 13px; font-weight: 600;
+    }
+    @media (max-width: 1024px) {
+      .founder-inner { grid-template-columns: 1fr; gap: 60px; }
+      .founder-truck-tag { white-space: normal; text-align: center; }
+    }
+
     /* ─── FOOTER ─────────────────────────────────────────── */
     footer {
       background: var(--dark); padding: 72px 7% 32px;
@@ -955,6 +1030,44 @@
     </div>
   </section>
 
+  <!-- ── FUNDADOR ──────────────────────────────────────────── -->
+  <section class="section founder">
+    <div class="founder-inner">
+      <div class="founder-image-wrap">
+        <img src="fundador.jpg" alt="Proprietário P&M Transportes" class="founder-img" />
+        <div class="founder-scania-badge">
+          <svg viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" style="height:56px;width:auto;">
+            <rect width="160" height="80" rx="8" fill="#fff" stroke="#ddd" stroke-width="1"/>
+            <!-- checkmark circle -->
+            <circle cx="30" cy="40" r="20" fill="none" stroke="#1d2852" stroke-width="3"/>
+            <polyline points="20,40 27,48 42,32" stroke="#3c7a3f" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="55" y="30" font-family="Arial" font-weight="700" font-size="9" fill="#1d2852" letter-spacing="1">RENTABILIDADE</text>
+            <text x="55" y="42" font-family="Arial" font-weight="400" font-size="8" fill="#666" letter-spacing="1">COMPROVADA</text>
+            <text x="55" y="56" font-family="Arial" font-weight="900" font-size="13" fill="#1d2852" letter-spacing="2">SCANIA</text>
+          </svg>
+        </div>
+        <!-- truck label -->
+        <div class="founder-truck-tag">🚛 Frota Scania — P&amp;M Transportes</div>
+      </div>
+      <div class="founder-content">
+        <div class="section-label">Quem está por trás</div>
+        <h2 class="section-title">Conheça o <em>fundador</em><br>da P&amp;M Transportes</h2>
+        <p class="founder-lead">Com mais de 15 anos de estrada, nosso fundador construiu a P&amp;M Transportes tijolo por tijolo, entrega por entrega. Uma história de dedicação, suor e amor pelo transporte brasileiro.</p>
+        <div class="founder-quote">
+          <span class="quote-mark">"</span>
+          <p>Começamos com um caminhão e muito propósito. Hoje somos referência no Sul do Brasil, com frota Scania e uma equipe que compartilha dos mesmos valores: pontualidade, honestidade e respeito pelo cliente."</p>
+          <footer>— Fundador &amp; CEO, P&amp;M Transportes</footer>
+        </div>
+        <div class="founder-badges">
+          <div class="f-badge">📍 Três Cachoeiras — RS</div>
+          <div class="f-badge">📍 Blumenau — SC</div>
+          <div class="f-badge">🚛 Frota 100% Scania</div>
+          <div class="f-badge">✅ Rentabilidade Comprovada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CONTATO ────────────────────────────────────────────── -->
   <section class="section contact" id="contato">
     <div class="contact-inner">
@@ -980,8 +1093,8 @@
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
-              <strong>Sede</strong>
-              <span>Av. Logística, 1500 — Galpão A<br>São Paulo / SP — CEP 01000-000</span>
+              <strong>Bases Operacionais</strong>
+              <span>Três Cachoeiras — RS<br>Blumenau — SC</span>
             </div>
           </div>
           <div class="contact-item">
